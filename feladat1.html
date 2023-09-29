@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 1</title>
+</head>
+<body>
+    <h1>Szöveg átalakítása</h1>
+
+    <label for="szoveg">Írd be a szöveget:</label>
+    <input type="text" id="szoveg" placeholder="Írd ide a szöveget">
+
+    <div>
+        <input type="radio" id="kisbetus" name="atalakit" value="kisbetus">
+        <label for="kisbetus">Kisbetűs</label>
+    </div>
+    <div>
+        <input type="radio" id="nagybetus" name="atalakit" value="nagybetus">
+        <label for="nagybetus">Nagybetűs</label>
+    </div>
+
+    <button id="atalakitGomb">Átalakítás</button>
+
+    <p>Eredmény: <span id="eredmeny"></span></p>
+
+    <script>
+        const szovegInput = document.getElementById('szoveg');
+        const kisbetusRadio = document.getElementById('kisbetus');
+        const nagybetusRadio = document.getElementById('nagybetus');
+        const eredmenySpan = document.getElementById('eredmeny');
+        const atalakit = document.getElementById('atalakitGomb');
+
+        atalakitGomb.addEventListener('click',function () {
+            const szoveg = szovegInput.value;
+            let atalakitottSzovege = '';
+            if (!szoveg) 
+            {
+                alert('Nem adtál meg szöveget');
+                return;
+            }
+            if (kisbetusRadio.checked) 
+                {
+                    atalakitottSzovege = szoveg.toLowerCase();
+                }
+            else if (nagybetusRadio.checked)
+                {
+                    atalakitottSzovege = szoveg.toUpperCase();
+                }
+            else
+            {
+                alert('Válassz ki egy átalakítási módot! ');
+                return
+            }
+            eredmenySpan.textContent = atalakitottSzovege;
+            alert('Eredmény: ' + atalakitottSzovege);            
+        });
+    </script>    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 2</title>
+</head>
+<body>
+    <h1>Regisztrációs űrlap</h1>
+    <form action="" id="regisztracio-form">
+        <label for="felhasznalonev">Felhasználónév (5-16 karakter):</label>
+    <input type="text" id="felhasznalonev" name="felhasznalonev" required minlength="5" maxlength="16">
+    
+    <label for="jelszo">Jelszó (minimum 5 karakter) :</label>
+    <input type="password" id="jelszo" name="jelszo" required minlength="5"><br>
+
+    <label for="jelszo-ismetles">Jelszó újra</label>
+    <input type="password" id="jelszo-ismetles" name="jelszo-ismetles" required > <br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="szuletesi-datum">Születési-dátum</label>
+    <input type="date" id="Születési-dátum" name="Születési-dátum" required><br>
+
+    <input type="submit" value="Regisztráció">
+    </form>
+    <script>
+        const regisztracioForm = document.getElementById('regisztracio_form');
+    </script>   
+</body>
+</html>
